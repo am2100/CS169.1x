@@ -1,7 +1,7 @@
 require 'fun_with_strings'
 require 'debugger'
 
-describe 'palindrome detection', :pending => true do
+describe 'palindrome detection' do
   it 'should work for simple strings [10 points]' do
     'redivider'.should  be_a_palindrome
     'abracadabra'.should_not  be_a_palindrome
@@ -15,7 +15,7 @@ describe 'palindrome detection', :pending => true do
   end    
 end
 
-describe 'word count', :pending => true do
+describe 'word count' do
   it 'should return a hash [5 points]' do
     'now is the time'.count_words.should be_a_kind_of Hash
   end
@@ -27,7 +27,7 @@ describe 'word count', :pending => true do
     'A man, a plan, a canal -- Panama!'.count_words.should ==
       {'man' => 1, 'plan' => 1, 'canal' => 1, 'a' => 3, 'panama' => 1}
   end
-  it 'works on the empty string [10 points]' do
+    it 'works on the empty string [10 points]' do
     ''.count_words.should ==  {}
   end
   it 'ignores leading whitespace [10 points]' do
@@ -40,7 +40,7 @@ describe 'word count', :pending => true do
   end
 end
 
-describe 'anagram grouping', :pending => true do
+describe 'anagram grouping' do
   describe 'sanity checks' do
     it 'should work on the empty string [5 points]' do
       ''.anagram_groups.should == []
