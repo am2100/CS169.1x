@@ -10,8 +10,8 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-    @@this_round = tournament.flatten.each_slice(2).to_a # ; p @@this_round
-    @@next_round = Array.new # ; p @@next_round
+    @@this_round = tournament.flatten.each_slice(2).to_a
+    @@next_round = Array.new
 
     num_rounds = (Math.log(@@this_round.length/2)/Math.log(2)).to_i + 1
     num_rounds.times do |round|
@@ -20,11 +20,9 @@ class RockPaperScissors
         p2 = @@this_round.shift
         @@next_round << self.winner(p1, p2)
       end
-      @@this_round = @@next_round # ; p @@this_round
-      @@next_round = [] unless @@next_round.length == 1 # ; p @@next_round
+      @@this_round = @@next_round
+      @@next_round = [] unless @@next_round.length == 1
     end
-#    p @@next_round[0]
-#     return "banana"
      @@next_round[0]
   end
 end
