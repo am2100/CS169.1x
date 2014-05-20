@@ -5,9 +5,10 @@ class Class
     attr_reader attr_name+"_history" # create bar_history getter
     class_eval %Q{
       def #{attr_name}=(val)
-        #{'@' + attr_name + '_history'} ||= [] # create _history array first time around
-        #{'@' + attr_name + '_history'} << #{'@' + attr_name} # push current value of var into _history array
-        #{'@' + attr_name} = val # set new value of var
+        @#{attr_name}_history ||= [] # create _history array first time around
+        @#{attr_name}_history << @#{attr_name} # push current value of var into _history array
+        @#{attr_name} = val # set new value of var
+
       end
     }
   end
